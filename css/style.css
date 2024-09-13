@@ -1,16 +1,33 @@
+/* VARIABLES */
+:root {
+    --highlightcolor: #4be089dc;
+}
+
+/* RESETS */
 body {
-    /* background: red; */
+    background-color: #272b42dc;
     margin: 0;
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
 h3 {
     margin: 0;
 }                 
 
-
 a {
     text-decoration: none;
+}
+
+/* ANIMATION */
+@keyframes slide-in {
+    from {
+        transform: translateX(-300%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* CUSTOM STYLES */
@@ -26,15 +43,17 @@ header {
     background: #242942dc;
     padding: 25px 7% 20px;
 }             
-    
+
+header a {
+    color: orange;
+}
+
+
 header nav {
     /* Percentage values are always a percentage of the parent's value(widht-height) */
     margin-left: 150px;
 } 
 
-header a {
-    color: orange;
-}
 
 header a:hover, header a.active {
     text-decoration: underline;
@@ -47,4 +66,67 @@ header nav a{
 /* Select all links with the nav except the last one */
 header nav a:not(:last-child) {
     margin-right: 10xp;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 3% 0 10%;
+}
+
+
+section p {
+    color: var(--highlightcolor);                  
+}
+
+section h1 {
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0 0 25px;
+    animation: slide-in 1s;
+}
+
+section button {
+    background: none;
+    border: 2px solid #4be089dc ;
+    padding: 0 0 0 15px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all .4s;
+}
+
+section button i {
+    /* color: red; */
+    font-size: 1.5rem;
+    background: #4be089dc;
+    padding: 10px 15px;
+    margin-left: 15px;
+}
+
+section button:hover {
+    background: #3cb66fdc;
+    color: black;    
+    transform: translatex(20px);
+}
+
+aside {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    position: relative;
+    left: 70px;
+}
+
+aside p{
+    color: var(--highlightcolor);
+    margin-right: 15px;
+}
+
+aside i {
+    color: #fff;
+    margin-right: 8px;
 }
